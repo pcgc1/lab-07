@@ -9,10 +9,10 @@ for n in 1 2 3 4; do
 
 	# testFail = 0 if testcase passed, 1 if failed
 	# numDiff stores the number of pairs that are different
-	testFail = 0
-	numDiff = 0
+	testFail=0
+	numDiff=0
 
-	for file1 in "inputDir"/*1.txt;do
+	for file1 in "$inputDir"/*1.txt;do
 		file2="${file1%.1.txt}.2.txt"
 
 		baseName=$(basename "$file1" .1.txt)
@@ -29,7 +29,7 @@ for n in 1 2 3 4; do
 			numDiff=$((numDiff + 1))
 
 			# Check if diff output exists
-			if [ ! -f "$outputFile"]; then
+			if [ ! -f "$outputFile" ]; then
 				echo "error: $outputFile is missing" >&2
 				testFail=1
 			# Check if diff output matches
