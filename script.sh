@@ -21,8 +21,8 @@ for n in 1 2 3 4; do
 		fi
 
 		# Strip the file path from the beginning to just get file name
-		base=$(basename "$file1" .1.txt)
-		diffOut="${base}Diff.txt"
+		baseName=$(basename "$file1" .1.txt)
+		diffOut="${baseName}Diff.txt"
 		
 		# Create diff directory and output diff into a file in that directory
 		mkdir -p $outputDir
